@@ -2,6 +2,8 @@
 
 Веб-интерфейс для отправки и получения текстовых сообщений в WhatsApp через [GREEN-API](https://green-api.com). Внешний вид повторяет тёмную тему веб-версии MAX ([web.max.ru](https://web.max.ru/)).
 
+**Демо:** https://artur-dev-1.github.io/green-api-chat/
+
 > Задание предполагало мессенджер MAX. Авторизовать инстанс MAX не удалось: мобильного приложения MAX нет в App Store моего региона, а без него QR-код не отсканировать. Поэтому, как разрешено в задании, чат сделан для WhatsApp. API у GREEN-API для обоих мессенджеров устроен одинаково, так что переход на MAX сводится к формату `chatId` и методу проверки номера.
 
 ## Возможности
@@ -39,6 +41,8 @@ npm run build    # production-сборка в dist/
 npm run preview  # просмотр production-сборки
 npm run lint     # oxlint
 ```
+
+При пуше в `main` проект автоматически собирается и публикуется на GitHub Pages (`.github/workflows/deploy.yml`).
 
 ## Подготовка инстанса GREEN-API
 
