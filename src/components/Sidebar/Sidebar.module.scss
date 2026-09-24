@@ -1,0 +1,174 @@
+@use '../../styles/mixins' as *;
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-width);
+  min-width: 0;
+  height: 100%;
+  border-right: 1px solid var(--divider);
+  background: var(--bg-primary);
+
+  @include mobile {
+    width: 100%;
+    border-right: none;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 16px 8px 20px;
+}
+
+.title {
+  margin: 0;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+.status {
+  margin: 0;
+  color: var(--text-mute);
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.statusError {
+  composes: status;
+  color: var(--text-negative);
+}
+
+.iconButton {
+  @include icon-button;
+}
+
+.newChat {
+  padding: 8px 16px 12px;
+  border-bottom: 1px solid var(--divider);
+}
+
+.newChatRow {
+  display: flex;
+  gap: 8px;
+}
+
+.newChatInput {
+  @include field;
+
+  min-width: 0;
+}
+
+.newChatButton {
+  @include primary-button;
+
+  flex-shrink: 0;
+  width: 42px;
+  padding: 0;
+}
+
+.newChatError {
+  margin: 8px 0 0;
+  color: var(--text-negative);
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.empty {
+  margin: 0;
+  padding: 32px 24px;
+  color: var(--text-mute);
+  text-align: center;
+}
+
+.list {
+  flex: 1;
+  margin: 0;
+  padding: 8px;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.item {
+  @include reset-button;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: var(--radius-m);
+  text-align: left;
+  transition: background-color 0.15s;
+
+  &:hover {
+    background: var(--bg-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+  }
+}
+
+.itemActive {
+  composes: item;
+  background: var(--accent-soft);
+
+  &:hover {
+    background: var(--accent-soft);
+  }
+}
+
+.itemBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.itemRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.itemName {
+  flex: 1;
+  overflow: hidden;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.itemTime {
+  flex-shrink: 0;
+  color: var(--text-mute);
+  font-size: 12px;
+}
+
+.itemPreview {
+  flex: 1;
+  overflow: hidden;
+  color: var(--text-tertiary);
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.counter {
+  flex-shrink: 0;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 10px;
+  background: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+}

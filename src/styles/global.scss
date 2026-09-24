@@ -1,0 +1,76 @@
+// Palette follows the dark theme of web.max.ru
+:root {
+  --bg-surface: #0f0f12;
+  --bg-primary: #17181c;
+  --bg-secondary: #25262d;
+  --bg-tertiary: rgb(255 255 255 / 9%);
+  --bg-hover: rgb(255 255 255 / 6%);
+
+  --text-primary: #fff;
+  --text-secondary: rgb(255 255 255 / 80%);
+  --text-tertiary: rgb(255 255 255 / 64%);
+  --text-mute: rgb(255 255 255 / 40%);
+  --text-negative: #ff5c6f;
+
+  --accent: #016fe7;
+  --accent-hover: #0276f5;
+  --accent-pressed: #0468d4;
+  --accent-soft: rgb(1 111 231 / 16%);
+
+  --divider: rgb(255 255 255 / 8%);
+  --stroke: rgb(255 255 255 / 16%);
+
+  --bubble-incoming: #25262d;
+  --bubble-outgoing: linear-gradient(135deg, #1f8fdc 0%, #016fe7 60%, #2672b2 100%);
+
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 18px;
+
+  --sidebar-width: 360px;
+
+  color-scheme: dark;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-surface);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(255 255 255 / 12%);
+  border-radius: 3px;
+}

@@ -1,0 +1,18 @@
+@use '../../styles/mixins' as *;
+
+.layout {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+// On mobile only one panel is visible: the chat list or the open chat
+.layoutChatOpen {
+  composes: layout;
+
+  @include mobile {
+    > aside {
+      display: none;
+    }
+  }
+}

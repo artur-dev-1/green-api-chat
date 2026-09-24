@@ -1,0 +1,94 @@
+@use '../../styles/mixins' as *;
+
+.screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 24px 16px;
+  background:
+    radial-gradient(circle at 20% 20%, rgb(115 54 167 / 25%), transparent 45%),
+    radial-gradient(circle at 80% 80%, rgb(43 90 159 / 25%), transparent 45%),
+    var(--bg-surface);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 32px 32px;
+  border: 1px solid var(--divider);
+  border-radius: 24px;
+  background: var(--bg-primary);
+
+  @include mobile {
+    padding: 32px 20px 24px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #bf97ff, #526eff 50%, #08d7f3);
+}
+
+.title {
+  margin: 0;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.subtitle {
+  margin: -8px 0 8px;
+  color: var(--text-tertiary);
+  text-align: center;
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  color: var(--text-tertiary);
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.input {
+  @include field;
+}
+
+.error {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: var(--radius-m);
+  background: rgb(206 66 87 / 16%);
+  color: var(--text-negative);
+  font-size: 14px;
+}
+
+.submit {
+  @include primary-button;
+
+  margin-top: 8px;
+}

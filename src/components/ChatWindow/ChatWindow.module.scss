@@ -1,0 +1,201 @@
+@use '../../styles/mixins' as *;
+
+.window {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  background:
+    radial-gradient(circle at 15% 10%, rgb(115 54 167 / 14%), transparent 40%),
+    radial-gradient(circle at 85% 90%, rgb(43 90 159 / 14%), transparent 40%),
+    var(--bg-surface);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--divider);
+  background: var(--bg-primary);
+}
+
+.back {
+  @include icon-button;
+
+  display: none;
+  margin-left: -8px;
+
+  @include mobile {
+    display: inline-flex;
+  }
+}
+
+.headerText {
+  min-width: 0;
+}
+
+.name {
+  margin: 0;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.phone {
+  margin: 0;
+  color: var(--text-mute);
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  padding: 16px 24px;
+  overflow-y: auto;
+
+  @include mobile {
+    padding: 12px;
+  }
+}
+
+.placeholder {
+  margin: auto;
+  padding: 10px 16px;
+  border-radius: var(--radius-l);
+  background: var(--bg-secondary);
+  color: var(--text-tertiary);
+  text-align: center;
+}
+
+.day {
+  align-self: center;
+  margin: 12px 0 8px;
+  padding: 4px 12px;
+  border-radius: 12px;
+  background: rgb(42 48 93 / 64%);
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.rowOutgoing {
+  composes: row;
+  align-items: flex-end;
+}
+
+.bubble {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: flex-end;
+  column-gap: 8px;
+  max-width: min(480px, 80%);
+  padding: 7px 12px;
+  border-radius: var(--radius-l);
+  border-bottom-left-radius: 4px;
+  background: var(--bubble-incoming);
+}
+
+.bubbleOutgoing {
+  composes: bubble;
+  border-bottom-left-radius: var(--radius-l);
+  border-bottom-right-radius: 4px;
+  background: var(--bubble-outgoing);
+}
+
+.text {
+  flex-grow: 1;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: -2px;
+  color: rgb(255 255 255 / 64%);
+  font-size: 12px;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.read {
+  color: #8fd3ff;
+}
+
+.failed {
+  color: var(--text-negative);
+}
+
+.retry {
+  @include reset-button;
+
+  margin-top: 4px;
+  color: var(--text-negative);
+  font-size: 13px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--divider);
+  background: var(--bg-primary);
+}
+
+.input {
+  @include field;
+
+  flex: 1;
+  max-height: 160px;
+  border-radius: 20px;
+  resize: none;
+  line-height: 20px;
+}
+
+.send {
+  @include primary-button;
+
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.emptyWindow {
+  composes: window;
+  align-items: center;
+  justify-content: center;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.emptyText {
+  margin: 0;
+  padding: 8px 16px;
+  border-radius: var(--radius-l);
+  background: var(--bg-secondary);
+  color: var(--text-tertiary);
+}
